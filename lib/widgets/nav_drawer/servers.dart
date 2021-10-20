@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grumble/models/server.dart';
+import 'package:grumble/pages/server/view.dart';
 
 serverListBuilder(BuildContext context) {
   return FutureBuilder(
@@ -18,10 +20,17 @@ serverListBuilder(BuildContext context) {
           itemCount: snapshot.data.length,
           itemBuilder: (context, index) {
             Server server = snapshot.data[index];
-            return Container(
-              width: 48,
-              height: 48,
-              child: Icon(server.icon),
+            return GestureDetector(
+              child: Container(width: 48, height: 48, child: Icon(server.icon)),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ServerHomePage(),
+                    settings: RouteSettings(arguments: server),
+                  ),
+                );
+              },
             );
           },
         ),
@@ -32,15 +41,9 @@ serverListBuilder(BuildContext context) {
 
 // Get a list of the user's servers
 Future<List<Server>> getServerList() async {
-  List<Server> serverList = new List.generate(
+  List<Server> serverList = List.generate(
     50,
-    (i) => Server("test2", Icons.add),
+    (i) => Server(i.toString(), 'Server #${i}', Icons.add),
   );
   return serverList;
-}
-
-class Server {
-  String name;
-  IconData icon;
-  Server(this.name, this.icon);
 }
