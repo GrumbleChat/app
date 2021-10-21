@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grumble/models/server.dart';
 import 'package:grumble/widgets/adaptive_scaffold.dart';
-import 'package:grumble/widgets/nav_drawer/main.dart';
+import 'package:grumble/widgets/nav_drawer.dart';
 
 class ServerHomePage extends StatelessWidget {
   ServerHomePage({Key? key}) : super(key: key);

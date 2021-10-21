@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grumble/models/channel.dart';
-import 'package:grumble/widgets/nav_drawer/main.dart';
+import 'package:grumble/widgets/nav_drawer.dart';
 
 class ChannelViewPage extends StatelessWidget {
   ChannelViewPage({Key? key}) : super(key: key);

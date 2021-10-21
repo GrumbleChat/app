@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grumble/widgets/adaptive_scaffold.dart';
-import 'package:grumble/widgets/nav_drawer/main.dart';
+import 'package:grumble/widgets/nav_drawer.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
