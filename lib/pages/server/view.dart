@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grumble/models/server.dart';
+import 'package:grumble/widgets/adaptive_scaffold.dart';
 import 'package:grumble/widgets/nav_drawer/main.dart';
 
 class ServerHomePage extends StatelessWidget {
@@ -10,7 +11,7 @@ class ServerHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final server = ModalRoute.of(context)!.settings.arguments as Server;
 
-    return Scaffold(
+    return AdaptiveScaffold(
       drawer: NavDrawer(),
       appBar: AppBar(title: Text(server.name)),
       body: Column(

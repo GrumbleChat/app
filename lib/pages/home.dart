@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:grumble/widgets/adaptive_scaffold.dart';
 import 'package:grumble/widgets/nav_drawer/main.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AdaptiveScaffold(
       drawer: NavDrawer(),
       appBar: AppBar(title: Text('Home Page')),
       body: Column(
